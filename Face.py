@@ -15,7 +15,7 @@ while cap.isOpened():
         roi_colour=img[y:y+h, x:x+w]
         eyes=eye.detectMultiScale(roi_gray)
         for( ex,ey,ew,eh) in eyes:
-            cv2.rectangle(roi_colour, (ey,ey), (ex+ew,ex+eh), (0,205,0), 5)
+            cv2.rectangle(roi_colour, (ex,ey), (ex+ew,ex+eh), (0,205,0), 5)
     cv2.imshow('img',img)
     if cv2.waitKey(1) & 0xFF ==ord('q') :
         break   
